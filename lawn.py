@@ -2,7 +2,7 @@ import math
 import time
 from pygame.locals import *
 import pygame
-from pygame.tests.draw_test import GREEN
+import requests
 
 
 NINETY = math.pi/2 + 0
@@ -148,5 +148,18 @@ class App:
 
 
 if __name__ == "__main__":
-    theApp = App()
-    theApp.on_execute()
+    # theApp = App()
+    # theApp.on_execute()
+    a = {'b': 4, 'c': False, 'd':True}
+    if a.get('b'):
+        print(a.get('b'))
+    if a.get('c'):
+        print('c')
+    if a.get('d'):
+        print('d')
+    if a.get('e'):
+        print('e')
+    campaigns = requests.get(
+        "https://campaigndesktop.bestegg.com/api/campaignParticipants?product=PERSONAL_LOAN").json()
+    print(len(campaigns))
+
